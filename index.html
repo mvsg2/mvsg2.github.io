@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venkata Sai Ganesh Manda — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #EEF2F6;
+    --surface: #FFFFFF;
+    --line: #C9D3DC;
+    --navy: #16232F;
+    --slate: #4A5A68;
+    --slate-light: #7A8894;
+    --orange: #E8622C;
+    --orange-dim: #F3D4C4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--navy);
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  /* Grid backdrop */
+  .grid-bg {
+    position: fixed; inset: 0; z-index: -1;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.35;
+  }
+
+  /* Hero */
+  header {
+    padding: 88px 0 56px;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--orange);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(32px, 6vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+  }
+  .subhead {
+    font-size: 17px;
+    color: var(--slate);
+    max-width: 520px;
+    margin-bottom: 28px;
+  }
+  .hero-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+  }
+  .hero-links a {
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--slate-light);
+    padding-bottom: 2px;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .hero-links a:hover { color: var(--orange); border-color: var(--orange); }
+
+  /* Section label */
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--slate-light);
+    padding: 40px 0 24px;
+  }
+
+  /* Waypoint route */
+  .route {
+    position: relative;
+    padding-left: 56px;
+  }
+  .route::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 8px;
+    bottom: 8px;
+    width: 0;
+    border-left: 2px dashed var(--slate-light);
+  }
+  .waypoint {
+    position: relative;
+    padding-bottom: 44px;
+  }
+  .waypoint:last-child { padding-bottom: 8px; }
+  .wp-marker {
+    position: absolute;
+    left: -56px;
+    top: 4px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 2px solid var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--orange);
+  }
+  .wp-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 22px 24px;
+  }
+  .wp-coord {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--slate-light);
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+  }
+  .wp-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+  .wp-title a { color: var(--navy); text-decoration: none; }
+  .wp-title a:hover { color: var(--orange); }
+  .wp-desc {
+    color: var(--slate);
+    font-size: 14.5px;
+    margin: 10px 0 16px;
+    max-width: 560px;
+  }
+  .wp-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .metric-chip {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    background: var(--orange-dim);
+    color: #8A3311;
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+  .wp-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .stack-tag {
+    font-size: 12px;
+    color: var(--slate);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 3px 9px;
+    border-radius: 5px;
+  }
+  .wp-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--slate-light);
+    padding-bottom: 1px;
+  }
+  .wp-link:hover { color: var(--orange); border-color: var(--orange); }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 40px 0 60px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  footer p {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--slate-light);
+  }
+  footer a {
+    color: var(--slate);
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    border-bottom: 1px solid var(--slate-light);
+  }
+  footer a:hover { color: var(--orange); border-color: var(--orange); }
+
+  @media (max-width: 560px) {
+    .route { padding-left: 44px; }
+    .route::before { left: 11px; }
+    .wp-marker { left: -44px; width: 28px; height: 28px; font-size: 10px; }
+    header { padding: 56px 0 40px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Route log &middot; systems and machine learning</div>
+    <h1>Venkata Sai Ganesh Manda</h1>
+    <p class="subhead">
+      Graduate researcher in Robotics and Autonomous Systems (AI) at Arizona State University.
+      I build and evaluate production LLM systems, and apply computer vision and applied
+      mathematics to autonomous systems — the four waypoints below trace that work.
+    </p>
+    <div class="hero-links">
+      <a href="mailto:saiganesh.profess@gmail.com">saiganesh.profess@gmail.com</a>
+      <a href="https://github.com/mvsg2" target="_blank" rel="noopener">github.com/mvsg2</a>
+      <a href="https://linkedin.com/in/sai-ganesh-manda-bo2002" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </header>
+
+  <div class="section-label">Waypoints &middot; May 2024 → Present</div>
+
+  <div class="route">
+
+    <div class="waypoint">
+      <div class="wp-marker">01</div>
+      <div class="wp-card">
+        <div class="wp-coord">WP-01 &middot; May 2026 – Present &middot; Independent Project</div>
+        <div class="wp-title"><a href="https://github.com/mvsg2/CodeLens" target="_blank" rel="noopener">CodeLens</a></div>
+        <p class="wp-desc">
+          A self-directed project in ML systems engineering — built for hands-on depth in core AI
+          infrastructure ahead of technical interviews, applying production-grade RAG and evaluation
+          practices end to end.
+        </p>
+        <div class="wp-metrics">
+          <span class="metric-chip">85% → 100% retrieval hit rate</span>
+          <span class="metric-chip">3.5h → minutes reindex</span>
+          <span class="metric-chip">$0.62 / eval run</span>
+        </div>
+        <div class="wp-stack">
+          <span class="stack-tag">RAG</span>
+          <span class="stack-tag">BM25 + semantic retrieval</span>
+          <span class="stack-tag">Cross-encoder reranking</span>
+          <span class="stack-tag">GitHub Actions CI</span>
+          <span class="stack-tag">LLM-as-judge</span>
+        </div>
+        <a class="wp-link" href="https://github.com/mvsg2/CodeLens" target="_blank" rel="noopener">View repository →</a>
+      </div>
+    </div>
+
+    <div class="waypoint">
+      <div class="wp-marker">02</div>
+      <div class="wp-card">
+        <div class="wp-coord">WP-02 &middot; Jan 2026 – May 2026 &middot; Arizona State University</div>
+        <div class="wp-title"><a href="https://github.com/mvsg2/tau-bench-CSE598-repo" target="_blank" rel="noopener">Tau-Bench</a></div>
+        <p class="wp-desc">
+          Large-scale benchmarking of autoregressive LLM agents. Contributed to the open-source
+          vLLM framework and trained Qwen3 models across a fault-tolerant distributed HPC cluster.
+        </p>
+        <div class="wp-metrics">
+          <span class="metric-chip">825 experimental runs</span>
+          <span class="metric-chip">4B–32B parameter models</span>
+          <span class="metric-chip">3,677 failures analyzed</span>
+        </div>
+        <div class="wp-stack">
+          <span class="stack-tag">vLLM</span>
+          <span class="stack-tag">SLURM / HPC</span>
+          <span class="stack-tag">Qwen3</span>
+          <span class="stack-tag">ReAct / ACT / function-calling</span>
+          <span class="stack-tag">LLM-as-judge</span>
+        </div>
+        <a class="wp-link" href="https://github.com/mvsg2/tau-bench-CSE598-repo" target="_blank" rel="noopener">View repository →</a>
+      </div>
+    </div>
+
+    <div class="waypoint">
+      <div class="wp-marker">03</div>
+      <div class="wp-card">
+        <div class="wp-coord">WP-03 &middot; Aug 2025 – Dec 2025 &middot; Arizona State University</div>
+        <div class="wp-title"><a href="https://github.com/mvsg2/RAS-545-Midterm-Project" target="_blank" rel="noopener">Autonomous Maze-Solving Robot</a></div>
+        <p class="wp-desc">
+          A perception-to-execution pipeline that reads a maze at any camera angle, plans a path,
+          and drives a physical robot arm through it — computer vision, agentic planning, and
+          affine coordinate calibration in one closed loop.
+        </p>
+        <div class="wp-metrics">
+          <span class="metric-chip">Arbitrary orientation solve</span>
+          <span class="metric-chip">6-parameter affine fit</span>
+        </div>
+        <div class="wp-stack">
+          <span class="stack-tag">OpenCV</span>
+          <span class="stack-tag">Homography</span>
+          <span class="stack-tag">A* / BFS path planning</span>
+          <span class="stack-tag">Agentic tool calls</span>
+          <span class="stack-tag">Dobot Magician Lite</span>
+        </div>
+        <a class="wp-link" href="https://github.com/mvsg2/RAS-545-Midterm-Project" target="_blank" rel="noopener">View repository →</a>
+      </div>
+    </div>
+
+    <div class="waypoint">
+      <div class="wp-marker">04</div>
+      <div class="wp-card">
+        <div class="wp-coord">WP-04 &middot; Jan 2024 – Jun 2024 &middot; University of Agder</div>
+        <div class="wp-title">Harmful Brain Activity Classification</div>
+        <p class="wp-desc">
+          A multimodal EEG spectrogram pipeline for clinical classification with limited labeled
+          data, resulting in a working diagnosis prototype and a manuscript currently under review
+          at ECAI 2025.
+        </p>
+        <div class="wp-metrics">
+          <span class="metric-chip">71% validation accuracy</span>
+          <span class="metric-chip">EfficientNet +5% vs. baselines</span>
+        </div>
+        <div class="wp-stack">
+          <span class="stack-tag">PyTorch</span>
+          <span class="stack-tag">ResNet / EfficientNet / MobileNet</span>
+          <span class="stack-tag">Transfer learning</span>
+          <span class="stack-tag">Scikit-learn</span>
+          <span class="stack-tag">NVIDIA V100</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Last updated 2026</p>
+    <a href="mailto:saiganesh.profess@gmail.com">Get in touch →</a>
+  </footer>
+
+</div>
+
+</body>
+</html>
