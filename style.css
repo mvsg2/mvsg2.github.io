@@ -105,21 +105,49 @@ h1 {
   max-width: 560px;
   margin-bottom: 28px;
 }
+.target-roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: baseline;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  margin: -8px 0 24px;
+}
+.tr-label {
+  color: var(--text-faint);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.tr-list {
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
 .hero-links {
   display: flex;
-  gap: 20px;
+  gap: 28px;
   flex-wrap: wrap;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 13px;
 }
 .hero-links a {
-  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  color: var(--text-dim);
   text-decoration: none;
-  border-bottom: 1px solid var(--text-faint);
-  padding-bottom: 2px;
-  transition: border-color 0.15s, color 0.15s;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.15s;
 }
-.hero-links a:hover { color: var(--accent); border-color: var(--accent); }
+.hero-links a svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+.hero-links a:hover { color: var(--accent); }
 
 /* Page header (sub-pages) */
 header.page-header {
