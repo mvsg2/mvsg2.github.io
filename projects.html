@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects &middot; Venkata Sai Ganesh Manda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grid-bg"></div>
+
+<div class="wrap">
+
+  <nav class="topnav">
+    <a href="index.html">Home</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="experience.html">Experience</a>
+    <a href="education.html">Education</a>
+    <a href="skills.html">Skills</a>
+  </nav>
+
+  <header class="page-header">
+    <h1>Projects</h1>
+    <p>Independent and coursework projects, from RAG systems and multi-agent LLM infrastructure to robotics perception and control.</p>
+  </header>
+
+  <div class="section-label">Waypoints &middot; May 2024 &rarr; Present</div>
+
+  <div class="route">
+
+    <div class="waypoint">
+      <div class="wp-marker">01</div>
+      <div class="wp-card">
+        <div class="wp-coord">WP-01 &middot; May 2026 – Present &middot; Independent Project</div>
+        <div class="wp-title"><a href="https://github.com/mvsg2/CodeLens" target="_blank" rel="noopener">CodeLens</a></div>
+        <p class="wp-desc">
+          A codebase intelligence API using hybrid retrieval and LLM-judged evals.
+        </p>
+        <div class="wp-metrics">
+          <span class="metric-chip">85% → 100% retrieval hit rate</span>
+          <span class="metric-chip">3.5h → minutes reindex</span>
+          <span class="metric-chip">$0.62 / eval run</span>
+        </div>
+        <div class="wp-stack">
+          <span class="stack-tag">RAG</span>
+          <span class="stack-tag">OpenAI API</span>
+          <span class="stack-tag">DeepSeek API</span>
+          <span class="stack-tag">FastAPI</span>
+          <span class="stack-tag">Hybrid Retrieval (BM25 + Semantic)</span>
+          <span class="stack-tag">ChromaDB (Vector Database)</span>
+          <span class="stack-tag">Cross-Encoder Reranking</span>
+          <span class="stack-tag">LLM-as-judge (RAGAS)</span>
+          <span class="stack-tag">Docker</span>
+          <span class="stack-tag">AWS (S3 / ECR / IAM)</span>
+          <span class="stack-tag">GitHub Actions CI</span>
+        </div>
+        <a class="wp-link" href="https://github.com/mvsg2/CodeLens" target="_blank" rel="noopener">View repository →</a>
+      </div>
+    </div>
+
+    <div class="waypoint">
+      <div class="wp-marker">02</div>
+      <div class="wp-card">
+        <div class="wp-coord">WP-02 &middot; Jan 2026 – May 2026 &middot; Arizona State University</div>
+        <div class="wp-title"><a href="https://github.com/mvsg2/tau-bench-CSE598-repo" target="_blank" rel="noopener">Tau-Bench</a></div>
+        <p class="wp-desc">
+          Large-scale benchmarking of autoregressive LLM agents. Contributed to the open-source
+          vLLM framework and trained Qwen3 models across a fault-tolerant distributed HPC cluster.
+        </p>
+        <div class="wp-metrics">
+          <span class="metric-chip">825 experimental runs</span>
+          <span class="metric-chip">4B–32B parameter models</span>
+          <span class="metric-chip">3,677 failures analyzed</span>
+        </div>
+        <div class="wp-stack">
+          <span class="stack-tag">vLLM</span>
+          <span class="stack-tag">SLURM / HPC</span>
+          <span class="stack-tag">Qwen3</span>
+          <span class="stack-tag">ReAct / ACT / function-calling</span>
+          <span class="stack-tag">LLM-Modulo</span>
+        </div>
+        <a class="wp-link" href="https://github.com/mvsg2/tau-bench-CSE598-repo" target="_blank" rel="noopener">View repository →</a>
+      </div>
+    </div>
+
+    <div class="waypoint">
+      <div class="wp-marker">03</div>
+      <div class="wp-card">
+        <div class="wp-coord">WP-03 &middot; Aug 2025 – Dec 2025 &middot; Arizona State University</div>
+        <div class="wp-title"><a href="https://github.com/mvsg2/RAS-545-Final-Project" target="_blank" rel="noopener">LLM-Controlled Robotic Manipulation</a></div>
+        <p class="wp-desc">
+          Agentic pipeline using the Anthropic Claude API and ROS 2 that lets a robot arm perform
+          pick-and-place tasks straight from natural language, with a vision layer for scene
+          perception and object detection.
+        </p>
+        <div class="wp-metrics">
+          <span class="metric-chip">Zero manual intervention</span>
+        </div>
+        <div class="wp-stack">
+          <span class="stack-tag">Anthropic Claude API</span>
+          <span class="stack-tag">ROS 2</span>
+          <span class="stack-tag">OpenCV</span>
+          <span class="stack-tag">Affine transforms</span>
+          <span class="stack-tag">Homography</span>
+        </div>
+        <a class="wp-link" href="https://github.com/mvsg2/RAS-545-Final-Project" target="_blank" rel="noopener">View repository →</a>
+      </div>
+    </div>
+
+    <div class="waypoint">
+      <div class="wp-marker">04</div>
+      <div class="wp-card">
+        <div class="wp-coord">WP-04 &middot; Aug 2025 – Dec 2025 &middot; Arizona State University</div>
+        <div class="wp-title"><a href="https://github.com/mvsg2/RAS-545-Midterm-Project" target="_blank" rel="noopener">Autonomous Maze-Solving Robot</a></div>
+        <p class="wp-desc">
+          A perception-to-execution pipeline that reads a maze at any camera angle, plans a path,
+          and drives a physical robot arm through it — computer vision, agentic planning, and
+          affine coordinate calibration in one closed loop.
+        </p>
+        <div class="wp-metrics">
+          <span class="metric-chip">100% solve rate, any orientation</span>
+          <span class="metric-chip">6-parameter affine fit</span>
+        </div>
+        <div class="wp-stack">
+          <span class="stack-tag">OpenCV</span>
+          <span class="stack-tag">Homography</span>
+          <span class="stack-tag">A* / BFS path planning</span>
+          <span class="stack-tag">Agentic tool calls</span>
+          <span class="stack-tag">Dobot Magician Lite</span>
+        </div>
+        <a class="wp-link" href="https://github.com/mvsg2/RAS-545-Midterm-Project" target="_blank" rel="noopener">View repository →</a>
+      </div>
+    </div>
+
+    <div class="waypoint">
+      <div class="wp-marker">05</div>
+      <div class="wp-card">
+        <div class="wp-coord">WP-05 &middot; Jan 2024 – Jun 2024 &middot; University of Agder</div>
+        <div class="wp-title">Bachelor Thesis: Source-Free Unsupervised Domain Adaptation</div>
+        <p class="wp-desc">
+          Adversarial learning and pseudo-labeling for domain adaptation without source data access,
+          targeting cross-domain medical image classification on Office-Home and DomainNet.
+        </p>
+        <div class="wp-metrics">
+          <span class="metric-chip">+10% over SFUDA baselines</span>
+        </div>
+        <div class="wp-stack">
+          <span class="stack-tag">PyTorch</span>
+          <span class="stack-tag">Adversarial learning</span>
+          <span class="stack-tag">Pseudo-labeling</span>
+          <span class="stack-tag">Domain adaptation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="waypoint">
+      <div class="wp-marker">06</div>
+      <div class="wp-card">
+        <div class="wp-coord">WP-06 &middot; Jan 2024 – Jun 2024 &middot; University of Agder</div>
+        <div class="wp-title">Harmful Brain Activity Classification</div>
+        <p class="wp-desc">
+          A multimodal EEG spectrogram pipeline for clinical classification with limited labeled
+          data, resulting in a working diagnosis prototype and a manuscript currently under review
+          at ECAI 2025.
+        </p>
+        <div class="wp-metrics">
+          <span class="metric-chip">71% validation accuracy</span>
+          <span class="metric-chip">EfficientNet +5% vs. baselines</span>
+        </div>
+        <div class="wp-stack">
+          <span class="stack-tag">PyTorch</span>
+          <span class="stack-tag">ResNet / EfficientNet / MobileNet</span>
+          <span class="stack-tag">Transfer learning</span>
+          <span class="stack-tag">Scikit-learn</span>
+          <span class="stack-tag">NVIDIA V100</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Last updated 2026</p>
+    <a href="mailto:saiganesh.profess@gmail.com">Get in touch →</a>
+  </footer>
+
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
