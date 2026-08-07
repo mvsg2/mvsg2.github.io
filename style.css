@@ -108,46 +108,68 @@ h1 {
 .target-roles {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
   align-items: baseline;
+  gap: 10px;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 12px;
   margin: -8px 0 24px;
 }
 .tr-label {
-  color: var(--text-faint);
+  color: var(--text-dim);
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+.tr-label::after { content: ":"; }
 .tr-list {
-  color: var(--accent);
+  color: var(--accent-bright);
   letter-spacing: 0.02em;
 }
 
 .hero-links {
   display: flex;
-  gap: 28px;
+  gap: 24px;
   flex-wrap: wrap;
 }
-.hero-links a {
+.hero-links a,
+.hero-links a:visited {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   color: var(--text-dim);
-  text-decoration: none;
+  text-decoration: none !important;
+}
+.hero-links a .icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, border-color 0.15s;
+}
+.hero-links a svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--text-dim);
+  transition: fill 0.15s;
+}
+.hero-links a .link-label {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 11px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  transition: color 0.15s;
+  text-decoration: none;
 }
-.hero-links a svg {
-  width: 22px;
-  height: 22px;
-  fill: currentColor;
+.hero-links a:hover .icon-box {
+  background: var(--accent-soft);
+  border-color: var(--accent-line);
 }
-.hero-links a:hover { color: var(--accent); }
+.hero-links a:hover svg { fill: var(--accent-bright); }
+.hero-links a:hover .link-label { color: var(--accent-bright); }
 
 /* Page header (sub-pages) */
 header.page-header {
