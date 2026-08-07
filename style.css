@@ -25,7 +25,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
-.wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; position: relative; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 40px; position: relative; }
 
 /* Backdrop: flat dark with a faint glow near the top */
 .grid-bg {
@@ -80,7 +80,6 @@ body {
 /* Hero (home page) */
 header.hero {
   padding: 40px 0 56px;
-  border-bottom: 1px solid var(--line);
 }
 .eyebrow {
   font-family: 'IBM Plex Mono', monospace;
@@ -102,28 +101,19 @@ h1 {
 .subhead {
   font-size: 18.5px;
   color: var(--text-dim);
-  max-width: 560px;
+  max-width: 680px;
   margin-bottom: 28px;
 }
-.target-roles {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 10px;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 12px;
-  margin: -8px 0 24px;
-}
-.tr-label {
-  color: var(--text-dim);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.tr-label::after { content: ":"; }
-.tr-list {
-  color: var(--accent-bright);
-  letter-spacing: 0.02em;
+.seeking-note {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 15.5px;
+  color: var(--text);
+  background: var(--accent-soft);
+  border-radius: 4px;
+  padding: 10px 14px;
+  max-width: 680px;
+  margin: -4px 0 24px;
+  line-height: 1.6;
 }
 
 .hero-links {
@@ -173,21 +163,27 @@ h1 {
 
 /* Page header (sub-pages) */
 header.page-header {
-  padding: 32px 0 40px;
-  border-bottom: 1px solid var(--line);
+  padding: 32px 0 16px;
 }
 header.page-header h1 { font-size: clamp(28px, 5vw, 38px); margin-bottom: 10px; }
-header.page-header p { color: var(--text-dim); font-size: 17px; max-width: 560px; }
+header.page-header p { color: var(--text-dim); font-size: 17px; max-width: 700px; }
 
 /* About section (home page) */
 .about-section {
   padding: 40px 0;
   border-bottom: 1px solid var(--line);
 }
+.section-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--text);
+  margin-bottom: 18px;
+}
 .about-section p {
   color: var(--text-dim);
   font-size: 17px;
-  max-width: 620px;
+  max-width: 700px;
   margin-bottom: 14px;
 }
 .about-section p:last-child { margin-bottom: 0; }
@@ -195,9 +191,12 @@ header.page-header p { color: var(--text-dim); font-size: 17px; max-width: 560px
 /* Explore grid (home page directory cards) */
 .explore-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 14px;
   padding: 40px 0;
+}
+@media (max-width: 860px) {
+  .explore-grid { grid-template-columns: repeat(2, 1fr); }
 }
 .explore-card {
   background: var(--surface);
@@ -319,12 +318,12 @@ header.page-header p { color: var(--text-dim); font-size: 17px; max-width: 560px
   color: var(--text-dim);
   font-size: 16px;
   margin: 10px 0 16px;
-  max-width: 560px;
+  max-width: 700px;
 }
 .wp-bullets {
   color: var(--text-dim);
   font-size: 15.5px;
-  max-width: 580px;
+  max-width: 720px;
   margin: 10px 0 16px;
   padding-left: 18px;
 }
