@@ -382,6 +382,30 @@ header.page-header p { color: var(--text-dim); font-size: 17px; max-width: 700px
 }
 .wp-link:hover { color: var(--accent); border-color: var(--accent); }
 
+.wp-doc summary {
+  cursor: pointer;
+  list-style: none;
+}
+.wp-doc summary::-webkit-details-marker { display: none; }
+.wp-doc summary::after { content: ' ▾'; }
+.wp-doc[open] summary::after { content: ' ▴'; }
+.wp-doc-frame {
+  margin: 14px 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+}
+.wp-doc-frame iframe {
+  display: block;
+  width: 100%;
+  height: 640px;
+  border: 0;
+}
+@media (max-width: 640px) {
+  .wp-doc-frame iframe { height: 460px; }
+}
+
 .inline-link {
   color: var(--text);
   text-decoration: none;
